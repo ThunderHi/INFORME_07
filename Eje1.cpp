@@ -19,10 +19,10 @@ public:
 
     //Método para mostrar información del vehículo
     void mostrar_info() {
-        cout << "Marca: " << marca << endl;
-        cout << "Modelo: " << modelo << endl;
-        cout << "Anio: " << anio << endl;
-        cout << "Precio: " << precio << endl;
+        cout<<"Marca: "<<marca<<endl;
+        cout<<"Modelo: "<<modelo<<endl;
+        cout<<"Anio: "<<anio<<endl;
+        cout<<"Precio: "<< precio<<endl;
     }
 };
 
@@ -42,8 +42,8 @@ public:
     void mostrar_info() {
         //Llamamos al método mostrar_info de la clase base Vehiculo
         Vehiculo::mostrar_info();
-        cout << "Número de puertas: " << num_puertas << endl;
-        cout << "Tipo de combustible: " << tipo_combustible << endl;
+        cout<<"Número de puertas: "<<num_puertas<<endl;
+        cout<<"Tipo de combustible: "<<tipo_combustible<<endl;
     }
 };
 
@@ -62,7 +62,7 @@ public:
     void mostrar_info() {
         //Llamamos al método mostrar_info de la clase base Vehiculo
         Vehiculo::mostrar_info();
-        cout << "Cilindrada: " << cilindrada << endl;
+        cout<<"Cilindrada: "<<cilindrada<<endl;
     }
 };
 
@@ -71,7 +71,7 @@ int main() {
     Automovil auto1("Toyota", "Corolla", 2020, 25000, 4, "Gasolina");
     //Mostramos la información del automóvil
     auto1.mostrar_info();
-    cout << endl;
+    cout<<endl;
 
     //Creamos un objeto de la clase Motocicleta
     Motocicleta moto1("Honda", "CBR600RR", 2018, 12000, 599);
@@ -80,3 +80,4 @@ int main() {
 
     return 0;
 }
+
