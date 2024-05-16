@@ -11,9 +11,9 @@ class Cliente {
         string numeroTarjeta;   //Número de tarjeta del cliente
         string contrasena;  //Contrasena del cliente
 
-        //Declaración de métodos
-        string encriptarTarjeta();
-        string encriptarContrasena();
+        //Declaración de métodos virtuales
+        virtual string encriptarTarjeta() = 0;
+        virtual string encriptarContrasena() = 0;
 
     public:
         //Constructor de clase
@@ -25,6 +25,8 @@ class Cliente {
             this->numeroTarjeta = tarjeta;
             this->contrasena = pass;
         }
+        //Destructor de clase
+        ~Cliente(){}
 
         //Método para mostrar datos auténticos del cliente
         void mostrarDatos() {
@@ -44,8 +46,8 @@ class ClienteSeguro : public Cliente {
         //Destructor
         ~ClienteSeguro(){}
 
-        //Encriptacion de numero de tarjeta
-        string encriptarTarjeta() {
+        //Encriptacion de numero de tarjeta con sobreescritura
+        string encriptarTarjeta() override{
             //se crea una copia de numeroTarjeta
             string temp = numeroTarjeta;
             string encriptado = "";
@@ -62,8 +64,8 @@ class ClienteSeguro : public Cliente {
             return encriptado;
         }
 
-        //Encriptación de contrasena
-        string encriptarContrasena() {
+        //Encriptación de contrasena con sobreescritura
+        string encriptarContrasena() override{
             string temp = contrasena;
             string encriptado = "";
 
