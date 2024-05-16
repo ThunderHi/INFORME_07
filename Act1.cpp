@@ -4,104 +4,104 @@
 using namespace std;
 //Clase Base Cliente
 class Cliente {
-protected:  //Atributos y metodos protegidos
-    string nombre;  //Nombre del cliente
-    string direccion;   //dirección del cliente
-    float saldo; // Saldo del cliente
-    string numeroTarjeta;   //Número de tarjeta del cliente
-    string contrasena;  //Contrasena del cliente
+    protected:  //Atributos y metodos protegidos
+        string nombre;  //Nombre del cliente
+        string direccion;   //dirección del cliente
+        float saldo; // Saldo del cliente
+        string numeroTarjeta;   //Número de tarjeta del cliente
+        string contrasena;  //Contrasena del cliente
 
-    //Declaración de métodos
-    string encriptarTarjeta();
-    string encriptarContrasena();
+        //Declaración de métodos
+        string encriptarTarjeta();
+        string encriptarContrasena();
 
-public:
-    //Constructor de clase
-    Cliente(string nom, string direc, float saldo, string tarjeta, string pass) {
-        //Asignacion de parametros a atributos
-        this->nombre = nom;   
-        this->direccion = direc;
-        this->saldo = saldo;
-        this->numeroTarjeta = tarjeta;
-        this->contrasena = pass;
-    }
+    public:
+        //Constructor de clase
+        Cliente(string nom, string direc, float saldo, string tarjeta, string pass) {
+            //Asignacion de parametros a atributos
+            this->nombre = nom;   
+            this->direccion = direc;
+            this->saldo = saldo;
+            this->numeroTarjeta = tarjeta;
+            this->contrasena = pass;
+        }
 
-    //Método para mostrar datos auténticos del cliente
-    void mostrarDatos() {
-        cout << "Nombre: " << nombre << endl;
-        cout << "Direccion: "<< direccion<<endl;
-        cout << "Saldo: " << saldo <<endl;
-        cout << "Numero de tarjeta: " << numeroTarjeta << endl;
-        cout << "Contrasena: " << contrasena << endl;
-    }
+        //Método para mostrar datos auténticos del cliente
+        void mostrarDatos() {
+            cout << "Nombre: " << nombre << endl;
+            cout << "Direccion: "<< direccion<<endl;
+            cout << "Saldo: " << saldo <<endl;
+            cout << "Numero de tarjeta: " << numeroTarjeta << endl;
+            cout << "Contrasena: " << contrasena << endl;
+        }
 };
 
 class ClienteSeguro : public Cliente {
-public:
-    //Constructor inicializando contructor base y herencia
-    ClienteSeguro(string nom, string direc, float saldo, string tarjeta, string pass) : Cliente(nom, direc, saldo, tarjeta, pass) {}
+    public:
+        //Constructor inicializando contructor base y herencia
+        ClienteSeguro(string nom, string direc, float saldo, string tarjeta, string pass) : Cliente(nom, direc, saldo, tarjeta, pass) {}
 
-    //Destructor
-    ~ClienteSeguro(){}
+        //Destructor
+        ~ClienteSeguro(){}
 
-    //Encriptacion de numero de tarjeta
-    string encriptarTarjeta() {
-        //se crea una copia de numeroTarjeta
-        string temp = numeroTarjeta;
-        string encriptado = "";
+        //Encriptacion de numero de tarjeta
+        string encriptarTarjeta() {
+            //se crea una copia de numeroTarjeta
+            string temp = numeroTarjeta;
+            string encriptado = "";
 
-        //Se recorre todos los caracteres de contrasena
-        for (int i = 0; i < temp.length(); i++) {
-            //Se maneja el caso del último digito
-            if (temp[i]=='9')   //en caso de '9' se coloca un '0'
-                temp[i]='0';
-            else
-                temp[i]+= 1;    //caso contrario suma una posicion en ASCII
-            encriptado += temp[i];  //Se almacena en variable string
-        }
-        return encriptado;
-    }
-
-    //Encriptación de contrasena
-    string encriptarContrasena() {
-        string temp = contrasena;
-        string encriptado = "";
-
-        //Se recorre todos los caracteres de contrasena
-        for (int i = 0; i < temp.length(); i++) {
-            
-            //Se manejan los casos de los ultimos valores de numeros y letras
-            switch (contrasena[i])
-            {
-                case '9':   //en caso de '9' se coloca un '0'
-                    temp[i] = '0';
-                    break;
-                case 'z':   //en caso de 'z' se coloca un 'a'
-                    temp[i] = 'a';
-                    break;
-                case 'Z':   //en caso de 'Z' se coloca un 'A'
-                    temp[i] = 'A';
-                    break;
-                default:    //caso contrario suma una posicion en ASCII
-                    temp[i]+= 1;
-                    break;
+            //Se recorre todos los caracteres de contrasena
+            for (int i = 0; i < temp.length(); i++) {
+                //Se maneja el caso del último digito
+                if (temp[i]=='9')   //en caso de '9' se coloca un '0'
+                    temp[i]='0';
+                else
+                    temp[i]+= 1;    //caso contrario suma una posicion en ASCII
+                encriptado += temp[i];  //Se almacena en variable string
             }
-            encriptado += temp[i];  //Se almacena en variable string
+            return encriptado;
         }
-        return encriptado;
-    }
 
-    //Método para mostrar datos encriptados
-    void mostrarEncriptacion(){
-        cout<<"DATOS ENCRIPTADOS DEL CLIENTE:"<<endl;
-        cout << "Numero de tarjeta: " << encriptarTarjeta() << endl;
-        cout << "Contrasena: " << encriptarContrasena()<< endl;
-    }
+        //Encriptación de contrasena
+        string encriptarContrasena() {
+            string temp = contrasena;
+            string encriptado = "";
 
-    //Método para verificar autenticidad
-    bool autenticar(string tarjeta, string pass) {
-        return numeroTarjeta == tarjeta or contrasena == pass;
-    }
+            //Se recorre todos los caracteres de contrasena
+            for (int i = 0; i < temp.length(); i++) {
+                
+                //Se manejan los casos de los ultimos valores de numeros y letras
+                switch (contrasena[i])
+                {
+                    case '9':   //en caso de '9' se coloca un '0'
+                        temp[i] = '0';
+                        break;
+                    case 'z':   //en caso de 'z' se coloca un 'a'
+                        temp[i] = 'a';
+                        break;
+                    case 'Z':   //en caso de 'Z' se coloca un 'A'
+                        temp[i] = 'A';
+                        break;
+                    default:    //caso contrario suma una posicion en ASCII
+                        temp[i]+= 1;
+                        break;
+                }
+                encriptado += temp[i];  //Se almacena en variable string
+            }
+            return encriptado;
+        }
+
+        //Método para mostrar datos encriptados
+        void mostrarEncriptacion(){
+            cout<<"DATOS ENCRIPTADOS DEL CLIENTE:"<<endl;
+            cout << "Numero de tarjeta: " << encriptarTarjeta() << endl;
+            cout << "Contrasena: " << encriptarContrasena()<< endl;
+        }
+
+        //Método para verificar autenticidad
+        bool autenticar(string tarjeta, string pass) {
+            return numeroTarjeta == tarjeta or contrasena == pass;
+        }
 };
 
 int main() {
