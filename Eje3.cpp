@@ -47,7 +47,7 @@ public:
 int main() {
     //Creacion de un objeto de la clase Telefono
     Telefono telefono("Samsung", "Galaxy S20", "Android");
-    //Creacion de un pbjeto de la clast Tablet
+    //Creacion de un objeto de la clast Tablet
     Tablet tablet("Apple", "iPad Pro", "iOS");
 
     return 0;
