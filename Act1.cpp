@@ -102,7 +102,7 @@ class ClienteSeguro : public Cliente {
 
         //Método para verificar autenticidad
         bool autenticar(string tarjeta, string pass) {
-            return numeroTarjeta == tarjeta or contrasena == pass;
+            return numeroTarjeta == tarjeta and contrasena == pass;
         }
 };
 
