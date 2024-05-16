@@ -10,11 +10,11 @@ private:        //Atributos de la clase Movil
     string sistemaOperativo;
 public:         //Constructor de la clase Movil
     Movil( string marca, string modelo, string sistemaOperativo): marca(marca), modelo(modelo), sistemaOperativo(sistemaOperativo) {
-            cout << "Constructor de Movil" << endl;  //Se imprime un mensaje por pantalla cuando se accede a este constructor
+            cout<< "Constructor de Movil" <<endl;  //Se imprime un mensaje por pantalla cuando se accede a este constructor
         }
     //Destructor de la clase Movil
     ~Movil() {
-        cout << "Destructor de Movil" << endl;  //Se imprime un mensaje por pantalla cuando se accede a este destructor
+        cout<< "Destructor de Movil" <<endl;  //Se imprime un mensaje por pantalla cuando se accede a este destructor
     }
 };  
 
@@ -23,11 +23,11 @@ class Telefono : public Movil {
 public:
     //Constructor de la clase Telefono
     Telefono(string marca, string modelo, string sistemaOperativo): Movil(marca, modelo, sistemaOperativo) {
-            cout << "Constructor de Telefono" << endl;  //Se imprime un mensaje por pantalla cuando se accede a este constructor
+            cout<< "Constructor de Telefono" <<endl;  //Se imprime un mensaje por pantalla cuando se accede a este constructor
         }
     //Destructor especifico de la clase Telefono
     ~Telefono() {
-        cout << "Destructor de Telefono" << endl;   //Se imprime un mensaje por pantalla cuando se accede a este destructor
+        cout<< "Destructor de Telefono" <<endl;   //Se imprime un mensaje por pantalla cuando se accede a este destructor
     }
 };
 
@@ -36,11 +36,11 @@ class Tablet : public Movil {
 public:
     //Constructor de la clase Tablet
     Tablet(string marca,string modelo, string sistemaOperativo): Movil(marca, modelo, sistemaOperativo) {
-            cout << "Constructor de Tablet" << endl;    //Se imprime un mensaje por pantalla cuando se accede a este constructor
+            cout<< "Constructor de Tablet" <<endl;    //Se imprime un mensaje por pantalla cuando se accede a este constructor
         }
     //Destructor especifico de la clase Tablet
     ~Tablet() {
-        cout << "Destructor de Tablet" << endl;  //Se imprime un mensaje por pantalla cuando se accede a este destructor
+        cout<< "Destructor de Tablet" <<endl;  //Se imprime un mensaje por pantalla cuando se accede a este destructor
     }
 };
 
