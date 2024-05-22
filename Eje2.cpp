@@ -14,9 +14,9 @@ class Persona{ //declaramos la clase Persona
         :nombre(nom), edad(ed), salario(sal), email(correo) {} //inicializacion de los atributos
 
     void mostrarInfo(){ //funcion miembro publica para mostrar la informacion de cada Persona
-        cout<< "Nombre: "<<nombre << endl;
-        cout<< "Edad: "<<edad << endl;
-        cout<<"Salario: "<<salario << endl; 
+        cout<< "Nombre: "<< nombre << endl;
+        cout<< "Edad: "<< edad << endl;
+        cout<<"Salario: "<< salario << endl; 
         //no agregamos el atributo "email" porque se accederá a dicho atributo desde las clases derivadas
     }
 };
