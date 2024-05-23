@@ -66,6 +66,7 @@ public:
     //Método para mostrar información de la motocicleta
     void mostrar_info() {
         //Llamamos al método mostrar_info de la clase base Vehiculo
+        //Refinamiento
         Vehiculo::mostrar_info();
         cout<<"Cilindrada: "<<cilindrada<<endl;
     }
