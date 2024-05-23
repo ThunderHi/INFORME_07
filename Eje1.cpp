@@ -1,3 +1,8 @@
+//Crea una clase base "Vehículo" con atributos como la marca, modelo, año de fabricación y precio.
+//Luego, crea dos clases derivadas, "Automóvil" y "Motocicleta" que hereden de la clase "Vehículo" y
+//añadan atributos específicos como número de puertas y tipo de combustible en el caso del
+//automóvil y cilindrada en el caso de la motocicleta.
+
 #include <iostream>
 #include <string>
 
