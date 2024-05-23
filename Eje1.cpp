@@ -47,7 +47,7 @@ public:
     void mostrar_info() {
         //Llamamos al método mostrar_info de la clase base Vehiculo
         Vehiculo::mostrar_info();
-        cout<<"Número de puertas: "<<num_puertas<<endl;
+        cout<<"Numero de puertas: "<<num_puertas<<endl;
         cout<<"Tipo de combustible: "<<tipo_combustible<<endl;
     }
 };
